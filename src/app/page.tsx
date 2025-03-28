@@ -13,7 +13,7 @@ export default function Home() {
     "Half a bagel stolen from the materials library": "🥯",
     "Leftover donuts from the client meeting": "🍩",
     "Trail mix spilled on your trace paper": "🥜",
-    "Yesterday's sandwich discovered under a pile of sketches": "🥪",
+    "Yesterday&apos;s sandwich discovered under a pile of sketches": "🥪",
     "Coffee beans eaten straight from desperation": "☕",
     "Mints found in your plotting folder": "🍬"
   };
@@ -24,18 +24,18 @@ export default function Home() {
   const [snack, setSnack] = useState("");
   const [mood, setMood] = useState("");
   const [isVisible, setIsVisible] = useState(true);
-  const [clickCount, setClickCount] = useState(0);
+  const [, setClickCount] = useState(0);
   const [showWaterReminder, setShowWaterReminder] = useState(false);
   const [showCTA, setShowCTA] = useState(false);
 
   const moods = [
     "while re-exporting a 2GB PDF for the fourth time",
     "as your model crashes for the third time today",
-    "because the client just requested 'something timeless but trendy'",
+    "because the client just requested &apos;something timeless but trendy&apos;",
     "while praying the render finishes before sunrise",
     "because Revit just crashed during cloud sync",
-    "while waiting for AutoCAD to stop 'not responding'",
-    "because your professor said 'just iterate more'",
+    "while waiting for AutoCAD to stop &apos;not responding&apos;",
+    "because your professor said &apos;just iterate more&apos;",
     "while the plotter jams during your final submission",
     "because your scale figures look suspiciously like memes",
     "while trying to explain why that column HAS to be there"
@@ -65,7 +65,7 @@ export default function Home() {
   };
 
   const shareOnTwitter = () => {
-    const tweetText = `I'm eating ${snack} ${mood}. ${snackEmojis[snack]} Send help. 🧑‍💻`;
+    const tweetText = `I&apos;m eating ${snack} ${mood}. ${snackEmojis[snack]} Send help. 🧑‍💻`;
     const url = "https://arkkisnack.vercel.app";
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`;
     window.open(shareUrl, '_blank');
@@ -154,7 +154,7 @@ export default function Home() {
 
           {showWaterReminder && (
             <div className="text-blue-600 font-medium text-lg animate-fade-in-out flex items-center gap-2">
-              Okay, maybe it's time to drink some water <span className="text-2xl">💧</span>
+              Okay, maybe it&apos;s time to drink some water <span className="text-2xl">💧</span>
             </div>
           )}
         </div>
