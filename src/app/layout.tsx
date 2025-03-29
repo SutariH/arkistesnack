@@ -6,7 +6,33 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "What Should I Eat While Rendering?",
-  description: "A fun snack suggestion app for developers",
+  description: "A fun and relatable snack suggestion site for architects and interior designers pulling all-nighters and waiting for their render to finish.",
+  openGraph: {
+    title: "What Should I Eat While Rendering?",
+    description: "Snack ideas for architects and interior designers stuck in the render loop.",
+    type: "website",
+    url: "https://arkkisnack.vercel.app",
+    siteName: "What Should I Eat While Rendering?",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png", // We'll need to add this image to the public folder
+        width: 1200,
+        height: 630,
+        alt: "What Should I Eat While Rendering - A snack generator for architects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What Should I Eat While Rendering?",
+    description: "Snack ideas for architects and interior designers stuck in the render loop.",
+    images: ["/og-image.png"],
+  },
+  viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
