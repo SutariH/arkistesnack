@@ -18,9 +18,7 @@ export default function Home() {
     "Mints found in your plotting folder": "🍬"
   };
 
-  const [snackEmojis, setSnackEmojis] = useState(defaultSnackEmojis);
-  const [newSnack, setNewSnack] = useState("");
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [snackEmojis] = useState(defaultSnackEmojis);
   const [snack, setSnack] = useState("");
   const [mood, setMood] = useState("");
   const [isVisible, setIsVisible] = useState(true);
@@ -69,19 +67,6 @@ export default function Home() {
     const url = "https://arkkisnack.vercel.app";
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`;
     window.open(shareUrl, '_blank');
-  };
-
-  const handleSubmitSnack = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newSnack.trim()) {
-      setSnackEmojis(prev => ({
-        ...prev,
-        [newSnack]: "🍽️" // Default emoji for custom snacks
-      }));
-      setNewSnack("");
-      setShowConfirmation(true);
-      setTimeout(() => setShowConfirmation(false), 3000);
-    }
   };
 
   const ShareButtons = ({ snack, mood }: { snack: string; mood: string }) => {
@@ -197,9 +182,9 @@ export default function Home() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center p-8 overflow-hidden bg-white">
+    <main className="relative flex min-h-screen flex-col items-center justify-between p-8 overflow-hidden bg-white">
       <div className="absolute inset-0 bg-gradient-to-r from-white via-arkiste-grey/5 to-white animate-gradient bg-[length:300%_300%]"></div>
-      <div className="relative z-10 flex flex-col items-center justify-center w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full flex-grow">
         <h1 className="text-4xl md:text-6xl font-bold mb-12 text-arkiste-dark text-center">
           What Should I Eat While Rendering?
         </h1>
@@ -224,7 +209,7 @@ export default function Home() {
           )}
           {showCTA && (
             <div className="text-sm text-arkiste-grey mt-6 transition-opacity duration-500 ease-in-out">
-              Architect? Designer? Your snack deserves a portfolio.{" "}
+              Well, if you're stuck waiting for a render… might as well build your Arkiste portfolio.{" "}
               <a 
                 href="https://arkiste.com" 
                 target="_blank" 
@@ -237,65 +222,37 @@ export default function Home() {
           )}
         </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
-            <button
-              onClick={suggestSnack}
-              className="px-8 py-4 bg-[#00857F] text-white text-xl rounded-lg shadow-lg 
-                       hover:bg-[#00857F]/90 transform hover:scale-105 transition-all duration-200 ease-in-out
-                       focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-opacity-50
-                       font-semibold"
-            >
-              Suggest a Snack
-            </button>
+        <div className="flex flex-col items-center gap-4 mb-8">
+          <button
+            onClick={suggestSnack}
+            className="px-8 py-4 bg-[#00857F] text-white text-xl rounded-lg shadow-lg 
+                     hover:bg-[#00857F]/90 transform hover:scale-105 transition-all duration-200 ease-in-out
+                     focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-opacity-50
+                     font-semibold"
+          >
+            Suggest a Snack
+          </button>
 
-            {snack && (
-              <div className="flex flex-col items-center">
-                <ShareButtons snack={snack} mood={mood} />
+          {snack && (
+            <>
+              <div className="text-sm text-arkiste-grey mt-6 mb-2">
+                Send this to your studio buddy who's running on instant noodles and ambition 🍜
               </div>
-            )}
-          </div>
-
-          {showWaterReminder && (
-            <div className="text-arkiste-lila font-medium text-lg animate-fade-in-out flex items-center gap-2">
-              Okay, maybe it's time to drink some water <span className="text-2xl">💧</span>
-            </div>
+              <ShareButtons snack={snack} mood={mood} />
+            </>
           )}
         </div>
 
-        <div className="w-full max-w-md mt-8 mb-16">
-          <form onSubmit={handleSubmitSnack} className="flex flex-col items-center gap-4">
-            <input
-              type="text"
-              value={newSnack}
-              onChange={(e) => setNewSnack(e.target.value)}
-              placeholder="Suggest a new snack..."
-              className="w-full px-4 py-3 text-lg rounded-lg border border-arkiste-grey/20 
-                       focus:border-arkiste-green focus:ring-2 focus:ring-arkiste-green focus:ring-opacity-50 
-                       focus:outline-none transition-all duration-200 bg-white text-arkiste-dark 
-                       placeholder-arkiste-grey/60"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-[#00857F] text-white text-lg rounded-lg shadow-lg 
-                       hover:bg-[#00857F]/90 transform hover:scale-105 transition-all duration-200 ease-in-out
-                       focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-opacity-50
-                       font-semibold"
-            >
-              Add Snack
-            </button>
-            {showConfirmation && (
-              <div className="text-arkiste-lila font-medium animate-fade-in-out">
-                Snack added! ✨
-              </div>
-            )}
-          </form>
-        </div>
-
-        <footer className="absolute bottom-4 text-sm text-arkiste-grey italic mt-16">
-          Made by an architect who just wanted a snack.
-        </footer>
+        {showWaterReminder && (
+          <div className="text-arkiste-lila font-medium text-lg animate-fade-in-out flex items-center gap-2 mb-8">
+            Okay, maybe it's time to drink some water <span className="text-2xl">💧</span>
+          </div>
+        )}
       </div>
+
+      <footer className="text-sm text-arkiste-grey italic mt-8">
+        Made by an architect who just wanted a snack.
+      </footer>
     </main>
   );
 }
