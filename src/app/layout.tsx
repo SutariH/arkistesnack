@@ -1,10 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://arkkisnack.vercel.app"),
   title: "What Should I Eat While Rendering?",
   description: "A fun and relatable snack suggestion site for architects and interior designers pulling all-nighters and waiting for their render to finish.",
   openGraph: {
@@ -29,7 +35,6 @@ export const metadata: Metadata = {
     description: "Snack ideas for architects and interior designers stuck in the render loop.",
     images: ["/og-image.png"],
   },
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/favicon.ico",
   },
