@@ -102,9 +102,9 @@ export default function Home() {
       <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
         <button
           onClick={shareToWhatsApp}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Jaa WhatsAppissa"
           aria-label="Jaa WhatsAppissa"
         >
@@ -115,9 +115,9 @@ export default function Home() {
         
         <button
           onClick={shareOnTwitter}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Jaa Twitterissä"
           aria-label="Jaa Twitterissä"
         >
@@ -128,9 +128,9 @@ export default function Home() {
 
         <button
           onClick={() => copyToClipboard(fullShareText)}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Kopioi linkki Instagram-tarinaa varten"
           aria-label="Kopioi linkki Instagram-tarinaa varten"
         >
@@ -141,9 +141,9 @@ export default function Home() {
 
         <button
           onClick={shareToLinkedIn}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Jaa LinkedInissä"
           aria-label="Jaa LinkedInissä"
         >
@@ -154,9 +154,9 @@ export default function Home() {
 
         <button
           onClick={shareToFacebook}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Jaa Facebookissa"
           aria-label="Jaa Facebookissa"
         >
@@ -167,9 +167,9 @@ export default function Home() {
 
         <button
           onClick={() => copyToClipboard(fullShareText)}
-          className="w-12 h-12 flex items-center justify-center bg-[#00857F] rounded-full 
+          className="w-12 h-12 flex items-center justify-center bg-arkiste-green rounded-full 
                    hover:scale-110 hover:shadow-lg transition-all duration-200
-                   focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-offset-2"
+                   focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-offset-2"
           title="Kopioi linkki"
           aria-label="Kopioi linkki"
         >
@@ -225,9 +225,9 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4 mb-8">
           <button
             onClick={suggestSnack}
-            className="px-8 py-4 bg-[#00857F] text-white text-xl rounded-lg shadow-lg 
-                     hover:bg-[#00857F]/90 transform hover:scale-105 transition-all duration-200 ease-in-out
-                     focus:outline-none focus:ring-2 focus:ring-[#00857F] focus:ring-opacity-50
+            className="px-8 py-4 bg-arkiste-green text-white text-xl rounded-lg shadow-lg 
+                     hover:bg-arkiste-green/90 transform hover:scale-105 transition-all duration-200 ease-in-out
+                     focus:outline-none focus:ring-2 focus:ring-arkiste-green focus:ring-opacity-50
                      font-semibold"
           >
             Suggest a Snack
